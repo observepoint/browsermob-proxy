@@ -4,8 +4,8 @@
 
     <parent>
         <artifactId>browsermob-proxy</artifactId>
-        <groupId>net.lightbody.bmp</groupId>
-        <version>2.1.5</version>
+        <groupId>com.observepoint</groupId>
+        <version>2.1.5-fix-memory-leak</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -49,7 +49,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.lightbody.bmp</groupId>
+            <groupId>com.observepoint</groupId>
             <artifactId>littleproxy</artifactId>
             <exclusions>
                 <exclusion>
@@ -134,7 +134,7 @@
         </dependency>
 
         <dependency>
-            <groupId>net.lightbody.bmp</groupId>
+            <groupId>com.observepoint</groupId>
             <artifactId>mitm</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.lightbody.bmp</groupId>
+    <groupId>com.observepoint</groupId>
     <artifactId>browsermob-proxy</artifactId>
-    <version>2.1.5</version>
+    <version>2.1.5-fix-memory-leak</version>
     <modules>
         <module>browsermob-core</module>
         <module>browsermob-legacy</module>
@@ -271,9 +271,9 @@
             </dependency>
 
             <dependency>
-                <groupId>net.lightbody.bmp</groupId>
+                <groupId>com.observepoint</groupId>
                 <artifactId>littleproxy</artifactId>
-                <version>1.1.0-beta-bmp-17</version>
+                <version>1.1.2-fix-memory-leak</version>
             </dependency>
 
             <dependency>
@@ -538,6 +538,30 @@
             <properties>
                 <netty.version>${netty-4.1.version}</netty.version>
             </properties>
+        </profile>
+
+        <profile>
+            <id>observepoint-deployment</id>
+            <repositories>
+                <repository>
+                    <id>observepoint-nexus-snapshots</id>
+                    <url>https://nexus.observepoint.com/repository/snapshots</url>
+                </repository>
+                <repository>
+                    <id>observepoint-nexus-releases</id>
+                    <url>https://nexus.observepoint.com/repository/releases</url>
+                </repository>
+            </repositories>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>observepoint-nexus-snapshots</id>
+                    <url>https://nexus.observepoint.com/repository/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>observepoint-nexus-releases</id>
+                    <url>https://nexus.observepoint.com/repository/releases</url>
+                </repository>
+            </distributionManagement>
         </profile>
     </profiles>
 </project>
